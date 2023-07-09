@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\pe4proj\\napravo-schedule-app\\napravo-schedule\\ScheduleAPI\\ScheduleAPI.csproj": {}
+    "D:\\Repos\\Napravo-Schedule\\ScheduleAPI\\ScheduleAPI.csproj": {}
   },
   "projects": {
-    "C:\\pe4proj\\napravo-schedule-app\\napravo-schedule\\ScheduleAPI\\ScheduleAPI.csproj": {
+    "D:\\Repos\\Napravo-Schedule\\ScheduleAPI\\ScheduleAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\pe4proj\\napravo-schedule-app\\napravo-schedule\\ScheduleAPI\\ScheduleAPI.csproj",
+        "projectUniqueName": "D:\\Repos\\Napravo-Schedule\\ScheduleAPI\\ScheduleAPI.csproj",
         "projectName": "ScheduleAPI",
-        "projectPath": "C:\\pe4proj\\napravo-schedule-app\\napravo-schedule\\ScheduleAPI\\ScheduleAPI.csproj",
-        "packagesPath": "C:\\Users\\vrclu\\.nuget\\packages\\",
-        "outputPath": "C:\\pe4proj\\napravo-schedule-app\\napravo-schedule\\ScheduleAPI\\obj\\",
+        "projectPath": "D:\\Repos\\Napravo-Schedule\\ScheduleAPI\\ScheduleAPI.csproj",
+        "packagesPath": "C:\\Users\\Pe4enushko\\.nuget\\packages\\",
+        "outputPath": "D:\\Repos\\Napravo-Schedule\\ScheduleAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\vrclu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Pe4enushko\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"

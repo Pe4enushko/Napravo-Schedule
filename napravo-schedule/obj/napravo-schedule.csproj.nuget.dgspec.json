@@ -1,28 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\pe4proj\\napravo-schedule-app\\napravo-schedule\\napravo-schedule\\napravo-schedule.csproj": {}
+    "D:\\Repos\\Napravo-Schedule\\napravo-schedule\\napravo-schedule.csproj": {}
   },
   "projects": {
-    "C:\\pe4proj\\napravo-schedule-app\\napravo-schedule\\napravo-schedule\\napravo-schedule.csproj": {
+    "D:\\Repos\\Napravo-Schedule\\napravo-schedule\\napravo-schedule.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\pe4proj\\napravo-schedule-app\\napravo-schedule\\napravo-schedule\\napravo-schedule.csproj",
+        "projectUniqueName": "D:\\Repos\\Napravo-Schedule\\napravo-schedule\\napravo-schedule.csproj",
         "projectName": "napravo-schedule",
-        "projectPath": "C:\\pe4proj\\napravo-schedule-app\\napravo-schedule\\napravo-schedule\\napravo-schedule.csproj",
-        "packagesPath": "C:\\Users\\vrclu\\.nuget\\packages\\",
-        "outputPath": "C:\\pe4proj\\napravo-schedule-app\\napravo-schedule\\napravo-schedule\\obj\\",
+        "projectPath": "D:\\Repos\\Napravo-Schedule\\napravo-schedule\\napravo-schedule.csproj",
+        "packagesPath": "C:\\Users\\Pe4enushko\\.nuget\\packages\\",
+        "outputPath": "D:\\Repos\\Napravo-Schedule\\napravo-schedule\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\vrclu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Pe4enushko\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0-android",

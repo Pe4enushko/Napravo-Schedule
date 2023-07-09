@@ -8,33 +8,33 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = napravo_schedule
-build_property.ProjectDir = C:\pe4proj\napravo-schedule-app\napravo-schedule\napravo-schedule\
+build_property.ProjectDir = D:\Repos\Napravo-Schedule\napravo-schedule\
 
-[C:/pe4proj/napravo-schedule-app/napravo-schedule/napravo-schedule/App.xaml]
+[D:/Repos/Napravo-Schedule/napravo-schedule/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/pe4proj/napravo-schedule-app/napravo-schedule/napravo-schedule/AppShell.xaml]
+[D:/Repos/Napravo-Schedule/napravo-schedule/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/pe4proj/napravo-schedule-app/napravo-schedule/napravo-schedule/MVVM/Views/SchedulePage.xaml]
+[D:/Repos/Napravo-Schedule/napravo-schedule/MVVM/Views/SchedulePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.MVVM.Views.SchedulePage.xaml
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\SchedulePage.xaml
 build_metadata.AdditionalFiles.RelativePath = MVVM\Views\SchedulePage.xaml
 
-[C:/pe4proj/napravo-schedule-app/napravo-schedule/napravo-schedule/Resources/Styles/Colors.xaml]
+[D:/Repos/Napravo-Schedule/napravo-schedule/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/pe4proj/napravo-schedule-app/napravo-schedule/napravo-schedule/Resources/Styles/Styles.xaml]
+[D:/Repos/Napravo-Schedule/napravo-schedule/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml

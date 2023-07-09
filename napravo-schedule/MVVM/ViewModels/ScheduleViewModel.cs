@@ -15,8 +15,11 @@ namespace napravo_schedule.MVVM.ViewModels
         ClassReadable[] lessons;
         public ScheduleViewModel() 
         {
-            APIWorker api = new();
-            lessons = api.Get<ClassReadable[]>("Schedule", "1").Result;
+            SetLessons();
+        }
+        async void SetLessons()
+        {
+            Lessons = await ResponseFactory.GetClassReadable("Вп-31");
         }
     }
 }
