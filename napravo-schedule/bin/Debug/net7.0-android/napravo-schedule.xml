@@ -4,6 +4,14 @@
         <name>napravo-schedule</name>
     </assembly>
     <members>
+        <member name="M:napravo_schedule.API.APIWorker`1.GetAsync(napravo_schedule.API.APIRequest)">
+            <summary>
+            Performs get request with the base url of "https://api-messenger.florgon.com/v1"
+            </summary>
+            <exception cref="T:System.Net.Http.HttpRequestException">API didn't respond</exception>
+            <exception cref="T:System.InvalidOperationException">API has thrown ValidationError</exception>
+            <returns></returns>
+        </member>
         <member name="P:napravo_schedule.MVVM.Models.ClassReadable.Time">
             <summary>
             Time from 0:00 in minutes
@@ -25,6 +33,12 @@
         </member>
         <member name="P:napravo_schedule.MVVM.ViewModels.ScheduleViewModel.Lessons">
             <inheritdoc cref="F:napravo_schedule.MVVM.ViewModels.ScheduleViewModel.lessons"/>
+        </member>
+        <member name="P:napravo_schedule.MVVM.ViewModels.ScheduleViewModel.GroupTitle">
+            <inheritdoc cref="F:napravo_schedule.MVVM.ViewModels.ScheduleViewModel.groupTitle"/>
+        </member>
+        <member name="P:napravo_schedule.MVVM.ViewModels.ScheduleViewModel.Group">
+            <inheritdoc cref="F:napravo_schedule.MVVM.ViewModels.ScheduleViewModel.group"/>
         </member>
         <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
             <summary>
@@ -137,6 +151,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Lessons">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Lessons" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.GroupTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "GroupTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Group">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Group" generated properties.</summary>
+        </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
@@ -148,6 +168,12 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Lessons">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Lessons" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.GroupTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "GroupTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Group">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Group" generated properties.</summary>
         </member>
     </members>
 </doc>

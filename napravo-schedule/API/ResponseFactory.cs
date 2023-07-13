@@ -11,19 +11,31 @@ namespace napravo_schedule.API
 {
     public static class ResponseFactory
     {
-        static Dictionary<Type, string> methodUrlMap;
+        static Dictionary<Type, string> methodUrlMap = new();
         static MethodInfo[] methodsInfo;
         static ResponseFactory()
         {
-            methodUrlMap.Add(typeof(ClassReadable[]), "Schedule");
+            FillUrlMap();
             methodsInfo = typeof(ResponseFactory).GetMethods();
         }
-        public static async Task<ClassReadable[]> GetClassReadable(string groupTitle)
+        static void FillUrlMap()
+        {
+            methodUrlMap.Add(typeof(ClassReadable[]), "Schedule");
+            methodUrlMap.Add(typeof(Group), "Info/Group");
+        }
+        public static async Task<ClassReadable[]> GetClassesReadable(string groupTitle)
         {
             var method = GetMethodUrl();
             var arg = new KeyValuePair<string, string>(nameof(groupTitle), groupTitle);
             return await DoRequest<ClassReadable[]>(method, arg);
         }
+        public static async Task<Group> GetGroup(string title)
+        {
+            var method = GetMethodUrl();
+            var arg = new KeyValuePair<string, string>(nameof(title), title);
+            return await DoRequest<Group>(method, arg);
+        }
+        #region Internal
         static string GetMethodUrl([CallerMemberName] string caller = "")
         {
             return methodUrlMap[methodsInfo
@@ -53,5 +65,6 @@ namespace napravo_schedule.API
                 .GetAsync(new APIRequest(url, args));
             return response;
         }
+        #endregion
     }
 }

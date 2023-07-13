@@ -1,11 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using napravo_schedule.API;
 using napravo_schedule.MVVM.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace napravo_schedule.MVVM.ViewModels
 {
@@ -13,13 +8,24 @@ namespace napravo_schedule.MVVM.ViewModels
     {
         [ObservableProperty]
         ClassReadable[] lessons;
+        [ObservableProperty]
+        string groupTitle = "Вп-31";
+        [ObservableProperty]
+        Group group;
         public ScheduleViewModel() 
         {
             SetLessons();
+            SetGroupInfo();
         }
+
+        async void SetGroupInfo()
+        {
+            Group = await ResponseFactory.GetGroup(GroupTitle);
+        }
+
         async void SetLessons()
         {
-            Lessons = await ResponseFactory.GetClassReadable("Вп-31");
+            Lessons = await ResponseFactory.GetClassesReadable("Вп-31");
         }
     }
 }

@@ -1,3 +1,4 @@
+using ScheduleAPI.DB;
 using System.Reflection.Metadata.Ecma335;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
+builder.Services.AddSingleton<ScheduleContext>();
 
 var app = builder.Build();
 

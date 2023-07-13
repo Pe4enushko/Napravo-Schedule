@@ -15,7 +15,7 @@ namespace napravo_schedule.API
         static JsonSerializerOptions jsonOptions;
 
         static string _testAccessToken = "";
-        static string _baseUrl = "https://localhost:7028";
+        static string _baseUrl = "https://192.168.0.100:5000";
         HttpClient _httpClient;
 
         public APIWorker()

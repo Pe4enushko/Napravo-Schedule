@@ -8,20 +8,33 @@
     <ContentPage.BindingContext>
         <vm:ScheduleViewModel/>
     </ContentPage.BindingContext>
-    
-    <VerticalStackLayout>
-        <Label 
-            Text="Расписание"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <ListView ItemsSource="{Binding Lessons}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <Label Text="{Binding SubjectTitle}"/>
-                    </StackLayout>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </VerticalStackLayout>
+    <Grid>
+        <ActivityIndicator 
+            IsVisible="{Binding IsBusy}"/>
+        <VerticalStackLayout>
+            <HorizontalStackLayout>
+                <Label 
+                    Text="Расписание"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Center" />
+                <Label
+                    Text="{Binding Group.Title}"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center" />
+                <Label 
+                    Text="{Binding Group.Course}"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="End"/>
+            </HorizontalStackLayout>
+            <ListView ItemsSource="{Binding Lessons}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding SubjectTitle}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

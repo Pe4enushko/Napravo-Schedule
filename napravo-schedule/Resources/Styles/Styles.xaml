@@ -6,6 +6,7 @@
 
     <Style TargetType="ActivityIndicator">
         <Setter Property="Color" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        <Setter Property="ZIndex" Value="999"/>
     </Style>
 
     <Style TargetType="IndicatorView">
