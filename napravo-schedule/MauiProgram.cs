@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
-using napravo_schedule.API;
 using napravo_schedule.MVVM.ViewModels;
+using napravo_schedule.UserMessaging;
 
 namespace napravo_schedule;
 public static class MauiProgram
@@ -22,6 +22,8 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
+
         return builder.Build();
+
     }
 }

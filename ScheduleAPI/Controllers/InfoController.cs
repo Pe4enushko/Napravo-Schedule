@@ -16,7 +16,8 @@ namespace ScheduleAPI.Controllers
             this.db = db;
         }
         // GET: api/<InfoController>
-        [HttpGet("Group/{title}")]
+        [HttpGet]
+        [Route("Group")]
         public ActionResult<Group> Get(string title)
         {
             if (!db.Groups.Any(g => g.Title == title))

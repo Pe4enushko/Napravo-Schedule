@@ -20,8 +20,8 @@ namespace napravo_schedule.API
         }
         static void FillUrlMap()
         {
-            methodUrlMap.Add(typeof(ClassReadable[]), "Schedule");
-            methodUrlMap.Add(typeof(Group), "Info/Group");
+            methodUrlMap.Add(typeof(Task<ClassReadable[]>), "Schedule");
+            methodUrlMap.Add(typeof(Task<Group>), "Info/Group");
         }
         public static async Task<ClassReadable[]> GetClassesReadable(string groupTitle)
         {

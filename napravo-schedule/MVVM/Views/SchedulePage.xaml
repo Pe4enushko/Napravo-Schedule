@@ -29,9 +29,11 @@
             <ListView ItemsSource="{Binding Lessons}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout>
+                        <VerticalStackLayout>
                             <Label Text="{Binding SubjectTitle}"/>
-                        </StackLayout>
+                            <Label Text="{Binding TeacherName}"/>
+                            <Label Text="{Binding Time}"/>
+                        </VerticalStackLayout>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

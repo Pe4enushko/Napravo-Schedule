@@ -4,12 +4,16 @@
         <name>napravo-schedule</name>
     </assembly>
     <members>
-        <member name="M:napravo_schedule.API.APIWorker`1.GetAsync(napravo_schedule.API.APIRequest)">
+        <member name="T:napravo_schedule.API.APIRequest">
             <summary>
-            Performs get request with the base url of "https://api-messenger.florgon.com/v1"
+            API request versatile class. url method will be applied to https://pe4enushko.ddns.net/api in APIWorker class
+            </summary>
+        </member>
+        <member name="M:napravo_schedule.API.APIWorker`1.BuildRequestString(napravo_schedule.API.APIRequest)">
+            <summary>
+            Performs get request with the base url of https://pe4enushko.ddns.net/api/"
             </summary>
             <exception cref="T:System.Net.Http.HttpRequestException">API didn't respond</exception>
-            <exception cref="T:System.InvalidOperationException">API has thrown ValidationError</exception>
             <returns></returns>
         </member>
         <member name="P:napravo_schedule.MVVM.Models.ClassReadable.Time">

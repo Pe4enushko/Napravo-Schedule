@@ -19,7 +19,7 @@ namespace ScheduleAPI.Controllers
         }
 
         // GET: api/<ScheduleController>
-        [HttpGet("{groupTitle}")]
+        [HttpGet]
         public ActionResult<ClassReadable[]> Get(string groupTitle)
         {
             if (!db.Groups.Any(g => g.Title == groupTitle))
