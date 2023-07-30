@@ -8,19 +8,22 @@ using System.Threading.Tasks;
 namespace napravo_schedule.API
 {
     /// <summary>
-    /// API request versatile class. url method will be applied to https://pe4enushko.ddns.net/api in APIWorker class
+    /// API request versatile class. url method will be applied to https://pe4enushko.ddns.net/api
     /// </summary>
     internal class APIRequest
     {
         public IDictionary<string, string> args;
-        public string urlMethod;
+        public string requestUrl;
 
-        public bool IsValid() => !string.IsNullOrEmpty(urlMethod);
+        public bool IsValid() => !string.IsNullOrEmpty(requestUrl);
         public bool HasArgs() => args != null;
 
         public APIRequest(string url)
         {
-            this.urlMethod = url;
+            if (url[0] != '/')
+                url = '/' + url;
+
+            this.requestUrl = "https://pe4enushko.ddns.net/api" + url;
             args = new Dictionary<string,string>();
         }
         public APIRequest(string url, IDictionary<string, string> args) : this(url) =>

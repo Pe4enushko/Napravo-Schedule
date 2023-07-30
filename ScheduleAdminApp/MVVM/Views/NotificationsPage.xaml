@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dt="clr-namespace:ScheduleAdminApp.MVVM.Views.DataTemplates"
+             xmlns:vm="clr-namespace:ScheduleAdminApp.MVVM.ViewModels"
+             x:Class="ScheduleAdminApp.MVVM.Views.NotificationsPage"
+             Title="Расписание">
+    <ContentPage.BindingContext>
+        <vm:NotificationViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <DataTemplate x:Key="dt_regular">
+            <dt:RegularNotification/>
+        </DataTemplate>
+        <DataTemplate x:Key="dt_unread">
+            <dt:UnreadNotification/>
+        </DataTemplate>
+        <dt:NotificationDataTemlpateSelector x:Key="NotificationDTSelector"
+                                             RegularNotification="{StaticResource dt_regular}"
+                                             UnreadNotification="{StaticResource dt_unread}"/>
+    </ContentPage.Resources>
+
+    <CollectionView ItemTemplate="{StaticResource NotificationDTSelector}" 
+                    ItemsSource="{Binding Notifications}">
+    </CollectionView>
+</ContentPage>

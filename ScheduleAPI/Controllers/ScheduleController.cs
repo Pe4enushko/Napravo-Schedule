@@ -20,7 +20,7 @@ namespace ScheduleAPI.Controllers
 
         // GET: api/<ScheduleController>
         [HttpGet]
-        public ActionResult<ClassReadable[]> Get(string groupTitle)
+        public ActionResult<ClassReadable[]> GetSchedule(string groupTitle)
         {
             if (!db.Groups.Any(g => g.Title == groupTitle))
                 return BadRequest("No such group");
@@ -61,6 +61,11 @@ namespace ScheduleAPI.Controllers
 
             return Ok(classes);
             
+        }
+        [HttpPost("Classes/add")]
+        public ActionResult AddClass([FromBody] Class newItem)
+        {
+            return Ok();
         }
     }
 }

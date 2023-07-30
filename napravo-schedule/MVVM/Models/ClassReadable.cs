@@ -25,5 +25,13 @@ namespace napravo_schedule.MVVM.Models
         /// index of day of week
         /// </summary>
         public int DayOfWeek { get; set; }
+
+        public string TimeAsString => TimeSpan.FromMinutes(Time).ToString(@"hh\:mm");
+        public override string ToString()
+        {
+            return  $"{TimeAsString} \n" +
+                    $"{SubjectTitle} \n" +
+                    $"{TeacherName}";
+        }
     }
 }

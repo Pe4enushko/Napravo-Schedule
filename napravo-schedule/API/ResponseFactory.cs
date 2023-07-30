@@ -11,60 +11,90 @@ namespace napravo_schedule.API
 {
     public static class ResponseFactory
     {
-        static Dictionary<Type, string> methodUrlMap = new();
+        static int timeout = 30;
         static MethodInfo[] methodsInfo;
         static ResponseFactory()
         {
-            FillUrlMap();
             methodsInfo = typeof(ResponseFactory).GetMethods();
         }
-        static void FillUrlMap()
+
+        #region Requests
+        [Request("Notifications/all")]
+        public static async Task<Notification[]> GetAllNotifications(int studentId)
         {
-            methodUrlMap.Add(typeof(Task<ClassReadable[]>), "Schedule");
-            methodUrlMap.Add(typeof(Task<Group>), "Info/Group");
+            var arg = new KeyValuePair<string, string>(nameof(studentId), studentId.ToString());
+            return await DoRequest<Notification[]>(arg);
         }
+        [Request("Notifications/unchecked")]
+        public static async Task<Notification[]> GetUncheckedNotifications(int studentId)
+        {
+            var arg = new KeyValuePair<string, string>(nameof(studentId), studentId.ToString());
+            return await DoRequest<Notification[]>(arg);
+        }
+        [Request("Schedule")]
         public static async Task<ClassReadable[]> GetClassesReadable(string groupTitle)
         {
-            var method = GetMethodUrl();
             var arg = new KeyValuePair<string, string>(nameof(groupTitle), groupTitle);
-            return await DoRequest<ClassReadable[]>(method, arg);
+            return await DoRequest<ClassReadable[]>(arg);
         }
+        [Request("Info/Group")]
         public static async Task<Group> GetGroup(string title)
         {
-            var method = GetMethodUrl();
             var arg = new KeyValuePair<string, string>(nameof(title), title);
-            return await DoRequest<Group>(method, arg);
+            return await DoRequest<Group>(arg);
         }
+        [Request("Info/GroupTitles")]
+        public static async Task<string[]> GetGroupTitles()
+        {
+            return await DoRequest<string[]>();
+        }
+        #endregion
         #region Internal
-        static string GetMethodUrl([CallerMemberName] string caller = "")
+        static string GetMethodRequestMethod(string methodName)
         {
-            return methodUrlMap[methodsInfo
-                .First(a => a.Name == caller)
-                .ReturnParameter.ParameterType];
+            var attr = (RequestAttribute)methodsInfo
+                .First(a => a.Name == methodName)
+                .GetCustomAttribute(typeof(RequestAttribute));
+
+            if (attr == null)
+                throw new CustomAttributeFormatException(
+$"Method probably got no Request attribute stating api request method{methodName}");
+
+            return attr.Method;
         }
-        static Type GetMethodReturnType(string methodName) => 
-            methodsInfo.First(a => a.Name == methodName).ReturnType;
         
-        static async Task<T> DoRequest<T>(string url, int timeout = 30)
+        static async Task<T> DoRequest<T>([CallerMemberName] string caller = "")
         {
             var response = await new APIWorker<T>(timeout)
-                .GetAsync(new APIRequest(url));
+                .GetAsync(new APIRequest(GetMethodRequestMethod(caller)));
+            return response;
+        }
+        static async Task<T> DoRequest<T>(KeyValuePair<string, string> arg, [CallerMemberName] string caller = "")
+        {
+            var response = await new APIWorker<T>(timeout)
+                .GetAsync(new APIRequest(GetMethodRequestMethod(caller) ,arg));
             return response;
         }
 
-        static async Task<T> DoRequest<T>(string url, KeyValuePair<string, string> arg, int timeout = 30)
+        static async Task<T> DoRequest<T>(Dictionary<string, string> args, [CallerMemberName] string caller = "")
         {
             var response = await new APIWorker<T>(timeout)
-                .GetAsync(new APIRequest(url, arg));
-            return response;
-        }
-
-        static async Task<T> DoRequest<T>(string url, Dictionary<string, string> args, int timeout = 30)
-        {
-            var response = await new APIWorker<T>(timeout)
-                .GetAsync(new APIRequest(url, args));
+                .GetAsync(new APIRequest(GetMethodRequestMethod(caller), args));
             return response;
         }
         #endregion
+    }
+
+    /// <summary>
+    /// Use this attribute when method maps 2 requests
+    /// </summary>
+    class RequestAttribute : Attribute
+    {
+        public string Method { get; set; }
+
+        public RequestAttribute(string method)
+        {
+            this.Method = method;
+        }
     }
 }

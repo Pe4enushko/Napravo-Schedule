@@ -8,7 +8,6 @@ namespace napravo_schedule.API
     internal class APIWorker<T> : IDisposable
     {
         static JsonSerializerOptions jsonOptions;
-        static string _baseUrl = "https://pe4enushko.ddns.net/api/";
         HttpClient _httpClient;
 
         public APIWorker()
@@ -30,14 +29,14 @@ namespace napravo_schedule.API
         }
 
         /// <summary>
-        /// Performs get request with the base url of https://pe4enushko.ddns.net/api/"
+        /// Performs get request"
         /// </summary>
         /// <exception cref="HttpRequestException">API didn't respond</exception>
         /// <returns></returns>
         string BuildRequestString(APIRequest requestData)
         {
-            StringBuilder stringBuilder = new StringBuilder(_baseUrl);
-            stringBuilder.Append(requestData.urlMethod);
+            StringBuilder stringBuilder = new StringBuilder(requestData.requestUrl);
+
             bool firstArg = true;
             foreach (var arg in requestData.args)
             {
@@ -63,9 +62,9 @@ namespace napravo_schedule.API
 
                 return default(T);
             }
-
-            return await JsonSerializer
+            var res = await JsonSerializer
                 .DeserializeAsync<T>(new MemoryStream(Encoding.UTF8.GetBytes(json)), jsonOptions);
+            return res;
         }
     }
 }

@@ -18,12 +18,19 @@ namespace ScheduleAPI.Controllers
         // GET: api/<InfoController>
         [HttpGet]
         [Route("Group")]
-        public ActionResult<Group> Get(string title)
+        public ActionResult<Group> GetGroupInfo(string title)
         {
             if (!db.Groups.Any(g => g.Title == title))
                 return BadRequest("No such group");
     
             return Ok(db.Groups.First(g => g.Title == title));
+        }
+
+        [HttpGet]
+        [Route("GroupTitles")]
+        public ActionResult<string[]> GetGroupTitles()
+        {
+            return Ok(db.Groups.Select(g => g.Title).ToArray());
         }
     }
 }

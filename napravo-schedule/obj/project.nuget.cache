@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6D1LF/saiQs55AagQfSPa8MS65donocPIcbWRIr7Fp5/OVEeXACzkO96nPwowarJazEIBlaaZc2u7DUooykw5w==",
+  "dgSpecHash": "DGK1cuwzKsz83qbnLrELBsTw8lk8c673/+DQJAaUs/hJJeC//Kpvqj5uktTaLWkszq6nRuTyPVyfZjnSyA0HzA==",
   "success": true,
   "projectFilePath": "D:\\Repos\\Napravo-Schedule\\napravo-schedule\\napravo-schedule.csproj",
   "expectedPackageFiles": [
@@ -104,6 +104,7 @@
     "C:\\Users\\Pe4enushko\\.nuget\\packages\\xamarin.kotlin.stdlib.jdk8\\1.7.20.1\\xamarin.kotlin.stdlib.jdk8.1.7.20.1.nupkg.sha512",
     "C:\\Users\\Pe4enushko\\.nuget\\packages\\xamarin.kotlinx.coroutines.android\\1.6.4.1\\xamarin.kotlinx.coroutines.android.1.6.4.1.nupkg.sha512",
     "C:\\Users\\Pe4enushko\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.6.4.1\\xamarin.kotlinx.coroutines.core.jvm.1.6.4.1.nupkg.sha512",
+    "C:\\Users\\Pe4enushko\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\7.0.7\\microsoft.netcore.app.crossgen2.win-x64.7.0.7.nupkg.sha512",
     "C:\\Users\\Pe4enushko\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.28\\microsoft.windows.sdk.net.ref.10.0.19041.28.nupkg.sha512",
     "C:\\Users\\Pe4enushko\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.7\\microsoft.aspnetcore.app.runtime.win-x64.7.0.7.nupkg.sha512",
     "C:\\Users\\Pe4enushko\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.7\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.7.nupkg.sha512",

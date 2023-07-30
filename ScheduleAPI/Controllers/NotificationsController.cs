@@ -21,9 +21,9 @@ namespace ScheduleAPI.Controllers
             this.db = db;
         }
 
-        // GET: api/<NotificationsController>/new/5
-        [HttpGet("unseen")]
-        public ActionResult<Notification[]> Get(int studentId)
+        // GET: api/<NotificationsController>/unchecked/5
+        [HttpGet("unchecked")]
+        public ActionResult<Notification[]> GetUnchecked(int studentId)
         {
             if (!db.Students.Any(s => s.IdStudent == studentId))
                 return BadRequest("No such student");
@@ -36,7 +36,21 @@ namespace ScheduleAPI.Controllers
             return Ok(data);
         }
 
-        // POST api/<NotificationsController>
+        // GET: api/<NotificationsController>/unchecked/5
+        [HttpGet("all")]
+        public ActionResult<Notification[]> GetAll(int studentId)
+        {
+            if (!db.Students.Any(s => s.IdStudent == studentId))
+                return BadRequest("No such student");
+
+            var data = db.Notifications
+                .Where(n => n.IdStudent == studentId)
+                .ToArray();
+
+            return Ok(data);
+        }
+
+        // POST api/<NotificationsController>/new
         [HttpPost("new")]
         public ActionResult Post([FromBody] NotificationPost value)
         {

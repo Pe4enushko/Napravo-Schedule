@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ScheduleAdminApp.MVVM.Models
+{
+    public class ClassReadable
+    {
+        public int IdClass { get; set; }
+
+        public string SubjectTitle { get; set; }
+
+        public string TeacherName { get; set; }
+
+        public string GroupTitle { get; set; }
+
+        /// <summary>
+        /// Time from 0:00 in minutes
+        /// </summary>
+        public int Time { get; set; }
+
+        /// <summary>
+        /// index of day of week
+        /// </summary>
+        public int DayOfWeek { get; set; }
+
+        public string TimeAsString => TimeSpan.FromMinutes(Time).ToString(@"hh\:mm");
+        public override string ToString()
+        {
+            return  $"{TimeAsString} \n" +
+                    $"{SubjectTitle} \n" +
+                    $"{TeacherName}";
+        }
+    }
+}

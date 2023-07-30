@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:m="clr-namespace:ScheduleAdminApp.MVVM.Models"
+             xmlns:vm="clr-namespace:ScheduleAdminApp.MVVM.ViewModels"
+             x:Class="ScheduleAdminApp.MVVM.Views.SchedulePage"
+             Title="Расписание">
+    <ContentPage.BindingContext>
+        <vm:ScheduleViewModel/>
+    </ContentPage.BindingContext>
+    <Grid>
+        <ActivityIndicator 
+            IsVisible="{Binding IsBusy}"/>
+        
+        <VerticalStackLayout>
+            <Picker ItemsSource="{Binding AllGroupTitles}" 
+                    SelectedItem="{Binding GroupTitle}"/>
+            <HorizontalStackLayout>
+                <Label 
+                    Margin="0,0,0,10"
+                    HorizontalTextAlignment="Start"
+                    HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Группа: "/>
+                                <Span Text="{Binding GroupTitle}"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label 
+                    Margin="0,0,0,10"
+                    HorizontalTextAlignment="Start"
+                    HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="День: "/>
+                                <Span Text="{Binding DayString}"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Button Text="&lt;" Command="{Binding DecrementDayCommand}"/>
+                <Label Text="{Binding DayString}"/>
+                <Button Text=">" Command="{Binding IncrementDayCommand}"/>
+            </HorizontalStackLayout>
+            
+            <CollectionView ItemsSource="{Binding Lessons}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Background="lightgray" 
+                                             Margin="10,0" 
+                                             Padding="10">
+                            <Label Text="{Binding SubjectTitle}"/>
+                            <Label Text="{Binding TeacherName}"/>
+                            <Label Text="{Binding TimeAsString}"/>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

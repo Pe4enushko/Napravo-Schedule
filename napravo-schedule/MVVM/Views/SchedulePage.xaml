@@ -4,39 +4,65 @@
              xmlns:m="clr-namespace:napravo_schedule.MVVM.Models"
              xmlns:vm="clr-namespace:napravo_schedule.MVVM.ViewModels"
              x:Class="napravo_schedule.MVVM.Views.SchedulePage"
-             Title="SchedulePage">
+             Title="Расписание">
     <ContentPage.BindingContext>
         <vm:ScheduleViewModel/>
     </ContentPage.BindingContext>
     <Grid>
         <ActivityIndicator 
             IsVisible="{Binding IsBusy}"/>
+        
         <VerticalStackLayout>
+            <Picker ItemsSource="{Binding AllGroupTitles}" 
+                    SelectedItem="{Binding GroupTitle}"/>
             <HorizontalStackLayout>
                 <Label 
-                    Text="Расписание"
-                    VerticalOptions="Start" 
-                    HorizontalOptions="Center" />
-                <Label
-                    Text="{Binding Group.Title}"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
+                    Margin="0,0,0,10"
+                    HorizontalTextAlignment="Start"
+                    HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Группа: "/>
+                                <Span Text="{Binding GroupTitle}"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
                 <Label 
-                    Text="{Binding Group.Course}"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="End"/>
+                    Margin="0,0,0,10"
+                    HorizontalTextAlignment="Start"
+                    HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="День: "/>
+                                <Span Text="{Binding DayString}"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
             </HorizontalStackLayout>
-            <ListView ItemsSource="{Binding Lessons}">
-                <ListView.ItemTemplate>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Button Text="&lt;" Command="{Binding DecrementDayCommand}"/>
+                <Label Text="{Binding DayString}"/>
+                <Button Text=">" Command="{Binding IncrementDayCommand}"/>
+            </HorizontalStackLayout>
+            
+            <CollectionView ItemsSource="{Binding Lessons}">
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <VerticalStackLayout>
+                        <VerticalStackLayout Background="lightgray" 
+                                             Margin="10,0" 
+                                             Padding="10">
                             <Label Text="{Binding SubjectTitle}"/>
                             <Label Text="{Binding TeacherName}"/>
-                            <Label Text="{Binding Time}"/>
+                            <Label Text="{Binding TimeAsString}"/>
                         </VerticalStackLayout>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </VerticalStackLayout>
     </Grid>
 </ContentPage>
