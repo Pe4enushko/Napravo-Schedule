@@ -14,16 +14,15 @@ namespace napravo_schedule.API
     {
         public IDictionary<string, string> args;
         public string requestUrl;
-
         public bool IsValid() => !string.IsNullOrEmpty(requestUrl);
-        public bool HasArgs() => args != null;
+        public bool HasArgs() => args != null && args.Count > 0;
 
         public APIRequest(string url)
         {
             if (url[0] != '/')
                 url = '/' + url;
 
-            this.requestUrl = "https://pe4enushko.ddns.net/api" + url;
+            this.requestUrl = "http://pe4enushko.ddns.net/api" + url;
             args = new Dictionary<string,string>();
         }
         public APIRequest(string url, IDictionary<string, string> args) : this(url) =>

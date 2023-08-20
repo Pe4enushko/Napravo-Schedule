@@ -3,16 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:m="clr-namespace:napravo_schedule.MVVM.Models"
              xmlns:vm="clr-namespace:napravo_schedule.MVVM.ViewModels"
+             xmlns:cal="clr-namespace:napravo_schedule.MVVM.Views.DataTemplates.Calendar"
              x:Class="napravo_schedule.MVVM.Views.SchedulePage"
              Title="Расписание">
-    <ContentPage.BindingContext>
-        <vm:ScheduleViewModel/>
-    </ContentPage.BindingContext>
     <Grid>
         <ActivityIndicator 
             IsVisible="{Binding IsBusy}"/>
+
         
-        <VerticalStackLayout>
+        <Grid x:Name="SingleWeekContainer">
+            <VerticalStackLayout>
             <Picker ItemsSource="{Binding AllGroupTitles}" 
                     SelectedItem="{Binding GroupTitle}"/>
             <HorizontalStackLayout>
@@ -64,5 +64,6 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </VerticalStackLayout>
+        </Grid>
     </Grid>
 </ContentPage>

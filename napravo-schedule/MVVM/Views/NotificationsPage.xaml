@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:dt="clr-namespace:napravo_schedule.MVVM.Views.DataTemplates"
+             xmlns:dt="clr-namespace:napravo_schedule.MVVM.Views.DataTemplates.Notifications"
              xmlns:vm="clr-namespace:napravo_schedule.MVVM.ViewModels"
              x:Class="napravo_schedule.MVVM.Views.NotificationsPage"
              Title="Расписание">
     <ContentPage.BindingContext>
         <vm:NotificationViewModel/>
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Resources>
-        <DataTemplate x:Key="dt_regular">
-            <dt:RegularNotification/>
-        </DataTemplate>
-        <DataTemplate x:Key="dt_unread">
-            <dt:UnreadNotification/>
-        </DataTemplate>
         <dt:NotificationDataTemlpateSelector x:Key="NotificationDTSelector"
-                                             RegularNotification="{StaticResource dt_regular}"
-                                             UnreadNotification="{StaticResource dt_unread}"/>
+                                             RegularNotification="{StaticResource RegularNotification}"
+                                             UnreadNotification="{StaticResource UnreadNotification}"/>
     </ContentPage.Resources>
 
     <CollectionView ItemTemplate="{StaticResource NotificationDTSelector}" 

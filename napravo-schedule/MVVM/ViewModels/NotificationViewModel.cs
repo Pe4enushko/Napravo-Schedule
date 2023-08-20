@@ -1,6 +1,8 @@
 ﻿using napravo_schedule.API;
 using napravo_schedule.MVVM.Models;
 using System.Collections.ObjectModel;
+using System.Text;
+using System.Text.Json;
 
 namespace napravo_schedule.MVVM.ViewModels
 {
@@ -17,6 +19,8 @@ namespace napravo_schedule.MVVM.ViewModels
         async void FillData()
         {
             IsBusy = true;
+            string json = Properties.Resources.notif;
+            var str = new MemoryStream(Encoding.UTF8.GetBytes(json));
             await ResponseFactory.GetAllNotifications(testStudentId)
                 .ContinueWith((data) =>
             {

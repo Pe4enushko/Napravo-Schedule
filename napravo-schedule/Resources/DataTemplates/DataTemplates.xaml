@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:m="clr-namespace:napravo_schedule.MVVM.Models"
+             x:Class="napravo_schedule.Resources.DataTemplates.Dictionary1">
+
+    <DataTemplate x:Key="RegularNotification"
+                  x:DataType="m:Notification">
+        <VerticalStackLayout>
+            <Label Text="{Binding Moment}"/>
+            <Label Text="{Binding Header}"/>
+            <Label Text="{Binding Message}"/>
+        </VerticalStackLayout>
+    </DataTemplate>
+
+    <DataTemplate x:Key="UnreadNotification"
+                  x:DataType="m:Notification">
+        <VerticalStackLayout Background="#BB7676">
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="{Binding Moment}"/>
+                            <Span Text="              "/>
+                            <Span Text="новое" TextColor="Pink"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Text="{Binding Header}"/>
+            <Label Text="{Binding Message}"/>
+        </VerticalStackLayout>
+    </DataTemplate>
+</ResourceDictionary>

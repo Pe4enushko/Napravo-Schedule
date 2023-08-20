@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-builder.Services.AddSingleton<ScheduleContext>();
+builder.Services.AddTransient<ScheduleContext>();
 
 var app = builder.Build();
 

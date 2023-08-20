@@ -1,0 +1,69 @@
+is_global = true
+build_property.TargetFramework = net7.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = ScheduleAdminApp
+build_property.ProjectDir = D:\Repos\Napravo-Schedule\ScheduleAdminApp\
+
+[D:/Repos/Napravo-Schedule/ScheduleAdminApp/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScheduleAdminApp.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[D:/Repos/Napravo-Schedule/ScheduleAdminApp/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScheduleAdminApp.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[D:/Repos/Napravo-Schedule/ScheduleAdminApp/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScheduleAdminApp.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[D:/Repos/Napravo-Schedule/ScheduleAdminApp/MVVM/Views/DataTemplates/RegularNotification.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScheduleAdminApp.MVVM.Views.DataTemplates.RegularNotification.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\DataTemplates\RegularNotification.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\DataTemplates\RegularNotification.xaml
+
+[D:/Repos/Napravo-Schedule/ScheduleAdminApp/MVVM/Views/DataTemplates/UnreadNotification.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScheduleAdminApp.MVVM.Views.DataTemplates.UnreadNotification.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\DataTemplates\UnreadNotification.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\DataTemplates\UnreadNotification.xaml
+
+[D:/Repos/Napravo-Schedule/ScheduleAdminApp/MVVM/Views/NotificationsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScheduleAdminApp.MVVM.Views.NotificationsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\NotificationsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\NotificationsPage.xaml
+
+[D:/Repos/Napravo-Schedule/ScheduleAdminApp/MVVM/Views/SchedulePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScheduleAdminApp.MVVM.Views.SchedulePage.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\SchedulePage.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\SchedulePage.xaml
+
+[D:/Repos/Napravo-Schedule/ScheduleAdminApp/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScheduleAdminApp.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[D:/Repos/Napravo-Schedule/ScheduleAdminApp/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ScheduleAdminApp.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml

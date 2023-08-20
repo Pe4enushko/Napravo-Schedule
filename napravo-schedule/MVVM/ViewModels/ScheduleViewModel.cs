@@ -4,25 +4,30 @@ using napravo_schedule.API;
 using napravo_schedule.MVVM.Models;
 using napravo_schedule.UserMessaging;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Data;
+using System.Text;
+using System.Text.Json;
 
 namespace napravo_schedule.MVVM.ViewModels
 {
     public partial class ScheduleViewModel : BaseViewModel
     {
-        delegate void FillInfo();
-        FillInfo _fillers;
-
+        static object locker = new();
         /// <summary>
         /// 2 августа 2023 - воскресенье. Переменную не трогать, т.к. с её
         /// помощью коротко считается день недели и переводится в строку 
         /// (не через switch же это делать)
         /// </summary>
-        DateTime countPoint = new DateTime(2023, 8, 2);
+        DateTime countPoint = new DateTime(2023, 7, 30);
+
+        [NotifyPropertyChangedFor(nameof(DayString))]
+        [ObservableProperty]
+        DateTime chosenDate;
         ClassReadable[] AllLessons { get; set; }
         public ObservableCollection<ClassReadable> Lessons { get; set; } = new();
 
-        string _groupTitle;
+        string _groupTitle; 
         public string GroupTitle 
         {
             get => string.IsNullOrEmpty(_groupTitle) ? "Вп-31" : _groupTitle;
@@ -30,51 +35,36 @@ namespace napravo_schedule.MVVM.ViewModels
             {
                 _groupTitle = value;
                 OnPropertyChanged();
-                _fillers.Invoke();
             }
         }
-
-
-        public ObservableCollection<string> AllGroupTitles { get; set; } = new ObservableCollection<string>();
 
         [ObservableProperty]
         Group group;
 
-        [ObservableProperty]
-        [NotifyPropertyChangedFor(nameof(DayString))]
-        int currentDay = (int)DateTime.Now.DayOfWeek;
-        public string DayString => countPoint.AddDays(CurrentDay).DayOfWeek.ToString();
-
+        public string DayString => ChosenDate.DayOfWeek.ToString();
 
         [RelayCommand]
         void IncrementDay()
         {
-            if (CurrentDay == 6)
-                CurrentDay = 0;
-            else
-                CurrentDay++;
+            ChosenDate = ChosenDate.AddDays(1);
 
-            ChangeLessonsByDay(CurrentDay);
+            ChangeLessonsByDate(ChosenDate);
         }
         [RelayCommand]
         void DecrementDay()
         {
-            if (CurrentDay == 0)
-                CurrentDay = 6;
-            else
-                CurrentDay--;
+            ChosenDate = ChosenDate.AddDays(-1);
 
-            ChangeLessonsByDay(CurrentDay);
+            ChangeLessonsByDate(ChosenDate);
         }
-        public ScheduleViewModel() 
+        public ScheduleViewModel(DateTime date) 
         {
-            GetGroupTitles();
-            _fillers = new FillInfo(SetGroupInfo);
-            _fillers += SetLessons;
+            ChosenDate = date;
 
             try
             {
-                _fillers.Invoke(); //TODO: resolve cast problem
+                SetGroupInfo();
+                SetLessons();
             }
             catch (HttpRequestException ex)
             {
@@ -82,31 +72,19 @@ namespace napravo_schedule.MVVM.ViewModels
             }
         }
         /// <summary>
-        /// Is synchronous because result will be used in other methods
+        /// TODO: bind to auth
         /// </summary>
-        void GetGroupTitles()
-        {
-            var data = ResponseFactory.GetGroupTitles().Result;
-            var count = data.Length;
-
-            for (int i = 0; i < count; i++)
-            {
-                AllGroupTitles.Add(data[i]);
-            }
-
-            if (count > 0)
-                GroupTitle = AllGroupTitles[0];
-        }
-        async void SetGroupInfo() => 
-            Group = await ResponseFactory.GetGroup(GroupTitle);
+        void SetGroupInfo() =>
+            Group = new Group() { Course = 3, IdGroup = 1, Title = "Вп-31" };
         async void SetLessons()
         {
-            var arr = await ResponseFactory.GetClassesReadable(GroupTitle);
+            ClassReadable[] arr = await ResponseFactory.GetClassesReadable(GroupTitle);
+
             if (arr != null)
             {
                 AllLessons = arr;
-                FillChosenLessons(l => l.DayOfWeek == CurrentDay);
-            }
+                FillChosenLessons(l => l.DayOfWeek == (int)ChosenDate.DayOfWeek);
+            }  
         }
         
         void FillChosenLessons(Func<ClassReadable, bool> predicate)
@@ -114,19 +92,20 @@ namespace napravo_schedule.MVVM.ViewModels
             if (AllLessons != null && Lessons != null)
             {
                 Lessons.Clear();
+                var items = AllLessons.Where(predicate);
+
                 App.Current.Dispatcher.Dispatch(() =>
                 {
-                    foreach (var item in AllLessons
-                                         .Where(predicate))
+                    foreach (var item in items)
                         Lessons.Add(item);
                 });
             }
         }
 
-        void ChangeLessonsByDay(int dayOfWeek)
+        public void ChangeLessonsByDate(DateTime date)
         {
             Lessons.Clear();
-            FillChosenLessons(l => l.DayOfWeek == dayOfWeek
+            FillChosenLessons(l => l.DayOfWeek == (int)date.DayOfWeek
                                     && l.GroupTitle == GroupTitle);
         }
     }

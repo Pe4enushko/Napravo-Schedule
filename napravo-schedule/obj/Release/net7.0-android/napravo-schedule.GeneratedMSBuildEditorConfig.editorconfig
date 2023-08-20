@@ -26,17 +26,11 @@ build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.AppShell.
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[D:/Repos/Napravo-Schedule/napravo-schedule/MVVM/Views/DataTemplates/RegularNotification.xaml]
+[D:/Repos/Napravo-Schedule/napravo-schedule/MVVM/Views/CalendarPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.MVVM.Views.DataTemplates.RegularNotification.xaml
-build_metadata.AdditionalFiles.TargetPath = MVVM\Views\DataTemplates\RegularNotification.xaml
-build_metadata.AdditionalFiles.RelativePath = MVVM\Views\DataTemplates\RegularNotification.xaml
-
-[D:/Repos/Napravo-Schedule/napravo-schedule/MVVM/Views/DataTemplates/UnreadNotification.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.MVVM.Views.DataTemplates.UnreadNotification.xaml
-build_metadata.AdditionalFiles.TargetPath = MVVM\Views\DataTemplates\UnreadNotification.xaml
-build_metadata.AdditionalFiles.RelativePath = MVVM\Views\DataTemplates\UnreadNotification.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.MVVM.Views.CalendarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\CalendarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\CalendarPage.xaml
 
 [D:/Repos/Napravo-Schedule/napravo-schedule/MVVM/Views/NotificationsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -49,6 +43,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.MVVM.Views.SchedulePage.xaml
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\SchedulePage.xaml
 build_metadata.AdditionalFiles.RelativePath = MVVM\Views\SchedulePage.xaml
+
+[D:/Repos/Napravo-Schedule/napravo-schedule/Resources/DataTemplates/DataTemplates.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.Resources.DataTemplates.DataTemplates.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\DataTemplates\DataTemplates.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\DataTemplates\DataTemplates.xaml
 
 [D:/Repos/Napravo-Schedule/napravo-schedule/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

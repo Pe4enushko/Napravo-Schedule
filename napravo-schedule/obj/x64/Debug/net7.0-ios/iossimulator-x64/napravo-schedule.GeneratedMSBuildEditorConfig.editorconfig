@@ -1,0 +1,65 @@
+is_global = true
+build_property.TargetFramework = net7.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = napravo_schedule
+build_property.ProjectDir = D:\Repos\Napravo-Schedule\napravo-schedule\
+
+[D:/Repos/Napravo-Schedule/napravo-schedule/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[D:/Repos/Napravo-Schedule/napravo-schedule/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[D:/Repos/Napravo-Schedule/napravo-schedule/MVVM/Views/AuthPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.MVVM.Views.AuthPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\AuthPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\AuthPage.xaml
+
+[D:/Repos/Napravo-Schedule/napravo-schedule/MVVM/Views/CalendarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.MVVM.Views.CalendarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\CalendarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\CalendarPage.xaml
+
+[D:/Repos/Napravo-Schedule/napravo-schedule/MVVM/Views/NotificationsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.MVVM.Views.NotificationsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\NotificationsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\NotificationsPage.xaml
+
+[D:/Repos/Napravo-Schedule/napravo-schedule/MVVM/Views/SchedulePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.MVVM.Views.SchedulePage.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\SchedulePage.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\SchedulePage.xaml
+
+[D:/Repos/Napravo-Schedule/napravo-schedule/Resources/DataTemplates/DataTemplates.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.Resources.DataTemplates.DataTemplates.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\DataTemplates\DataTemplates.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\DataTemplates\DataTemplates.xaml
+
+[D:/Repos/Napravo-Schedule/napravo-schedule/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[D:/Repos/Napravo-Schedule/napravo-schedule/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = napravo_schedule.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml

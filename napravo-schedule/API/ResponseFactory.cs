@@ -11,6 +11,8 @@ namespace napravo_schedule.API
 {
     public static class ResponseFactory
     {
+        static ClassReadable[] cachedClasses;
+
         static int timeout = 30;
         static MethodInfo[] methodsInfo;
         static ResponseFactory()
@@ -35,7 +37,10 @@ namespace napravo_schedule.API
         public static async Task<ClassReadable[]> GetClassesReadable(string groupTitle)
         {
             var arg = new KeyValuePair<string, string>(nameof(groupTitle), groupTitle);
-            return await DoRequest<ClassReadable[]>(arg);
+            if (cachedClasses == null)
+                cachedClasses = await DoRequest<ClassReadable[]>(arg);
+
+            return cachedClasses;
         }
         [Request("Info/Group")]
         public static async Task<Group> GetGroup(string title)

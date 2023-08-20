@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:m="clr-namespace:napravo_schedule.MVVM.Models"
+             xmlns:cal="clr-namespace:napravo_schedule.MVVM.Views.DataTemplates.Calendar"
+             x:Class="napravo_schedule.MVVM.Views.CalendarPage"
+             Title="CalendarPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="Border">
+                <Setter Property="HeightRequest" Value="70"/>
+            </Style>
+            <Style TargetType="VerticalStackLayout">
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            
+            <DataTemplate x:DataType="m:CalendarCell"
+                          x:Key="dayoff">
+                <Border Background="lightgray">
+                    <VerticalStackLayout>
+                        <Label Text="{Binding DateString}"/>
+                        <Label Text="{Binding DayOfWeekString}"/>
+                    </VerticalStackLayout>
+                </Border>
+            </DataTemplate>
+            
+            <DataTemplate x:DataType="m:CalendarCell"
+                          x:Key="weekday">
+                <Border Background="white">
+                    <VerticalStackLayout>
+                        <Label Text="{Binding DateString}"/>
+                        <Label Text="{Binding DayOfWeekString}"/>
+                    </VerticalStackLayout>
+                </Border>
+            </DataTemplate>
+            
+            <cal:CalendarDataTemplateSelector x:Key="CalendarDTSelector"
+                                              DayOff="{StaticResource dayoff}"
+                                              Weekday="{StaticResource weekday}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid x:Name="CalendarContainer">
+        <CollectionView x:Name="Calendar"
+                            ItemTemplate="{StaticResource CalendarDTSelector}"
+                            SelectionChanged="Calendar_SelectionChanged"
+                            SelectionMode="Single">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                     SnapPointsType="Mandatory"
+                                     HorizontalItemSpacing="0"
+                                     VerticalItemSpacing="0"
+                                     Span="4"/>
+            </CollectionView.ItemsLayout>
+        </CollectionView>
+    </Grid>
+</ContentPage>

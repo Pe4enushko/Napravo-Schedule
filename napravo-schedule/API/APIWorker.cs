@@ -28,11 +28,6 @@ namespace napravo_schedule.API
             this.Dispose();
         }
 
-        /// <summary>
-        /// Performs get request"
-        /// </summary>
-        /// <exception cref="HttpRequestException">API didn't respond</exception>
-        /// <returns></returns>
         string BuildRequestString(APIRequest requestData)
         {
             StringBuilder stringBuilder = new StringBuilder(requestData.requestUrl);
@@ -50,21 +45,29 @@ namespace napravo_schedule.API
         internal async Task<T> GetAsync(APIRequest requestData)
         {
             var req = BuildRequestString(requestData);
-
-            var response = await _httpClient.GetAsync(req);
-            var json = await response.Content.ReadAsStringAsync();
-
-            if (response.StatusCode != HttpStatusCode.OK)
+            HttpResponseMessage response;
+            try
             {
-                AlertDisplayer.DisplayError(
-                    $"Http response code: {response.StatusCode}\n" +
-                    $" Message: {response.ReasonPhrase}");
+                response = await _httpClient.GetAsync(req);
+                var json = await response.Content.ReadAsStringAsync();
 
+                if (response.StatusCode != HttpStatusCode.OK)
+                {
+                    AlertDisplayer.DisplayError(
+                        $"Http response code: {response.StatusCode}\n" +
+                        $" Message: {response.ReasonPhrase}");
+
+                    return default(T);
+                }
+                var res = await JsonSerializer
+                    .DeserializeAsync<T>(new MemoryStream(Encoding.UTF8.GetBytes(json)), jsonOptions);
+                return res;
+            }
+            catch (WebException exc)
+            {
+                AlertDisplayer.DisplayError("Server problems\n Message: " + exc.Message);
                 return default(T);
             }
-            var res = await JsonSerializer
-                .DeserializeAsync<T>(new MemoryStream(Encoding.UTF8.GetBytes(json)), jsonOptions);
-            return res;
         }
     }
 }

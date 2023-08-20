@@ -10,7 +10,7 @@
     <TabBar>
         <ShellContent
             Title="Расписание"
-            ContentTemplate="{DataTemplate pages:SchedulePage}"
+            ContentTemplate="{DataTemplate pages:CalendarPage}"
             Route="Schedule"/>
         <ShellContent
             Title="Уведомления"
